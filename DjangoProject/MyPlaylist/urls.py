@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from snsApp import views
+from serviceApp import views
+from playlistApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('/', serviceApp.views.home, name='home'),
+    # path('/feeds', serviceApp.views.feeds, name='feeds'),
+    # path('/popular', serviceApp.views.popular, name='popular'),
+    # path('accounts/' )
 ]
