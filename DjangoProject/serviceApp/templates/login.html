@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Playlists Login</title>
+<link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/tabbar.css' %}">
+<script src="{% static 'js/tabbar.js' %}"></script>
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{% static 'images/img-01.png' %}" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" method="POST">
+                    {% csrf_token %}
+					<span class="login100-form-title">
+						My Playlist 로그인
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "아이디를 입력해주세요.">
+						<input class="input100" type="text" name="username" placeholder="아아디">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "패스워드를 입력해주세요.">
+						<input class="input100" type="password" name="password" placeholder="패스워드">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							로그인
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+                        <a class="txt2" href="javascript:alert('안타깝네요.');">
+							아이디 / 패스워드
+						</a>
+						<span class="txt1">
+							잊으셨나요?
+						</span>
+						
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="/register">
+							회원가입
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tab-nav-container">
+        <div class="tab purple" onclick="location.href='/'">
+            <i class="fas fa-home"></i>
+            <p>Home</p>
+        </div>
+        <div class="tab pink" onclick="location.href='/popular'">
+            <i class="far fa-heart"></i>
+            <p>Likes</p>
+        </div>
+        <div class="tab yellow" onclick="location.href='/feeds'">
+            <i class="fas fa-music"></i>
+            <p>Feeds</p>
+        </div>
+        <div class="tab yellow" onclick="location.href='/search'">
+            <i class="fas fa-search"></i>
+            <p>Search</p>
+        </div>
+        <div class="tab active teal" onclick="location.href='/myprofile'">
+            <i class="far fa-user"></i>
+            <p>Profile</p>
+        </div>
+    </div>
+
+	
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

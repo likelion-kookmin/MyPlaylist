@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>음원서비스 연동</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<!--===============================================================================================-->
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css">
+	<link rel="stylesheet" href="{% static 'css/tabbar.css' %}">
+	<script src="{% static 'js/tabbar.js' %}"></script>
+
+	<style>
+		 body {
+	 background-color: black;
+}
+ .container {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 /* height: 100vh; */
+}
+ .radio-tile-group {
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: center;
+}
+ .radio-tile-group .input-container {
+	 position: relative;
+	 height: 7rem;
+	 width: 7rem;
+	 margin: 0.5rem;
+}
+ .radio-tile-group .input-container .radio-button {
+	 opacity: 0;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 100%;
+	 width: 100%;
+	 margin: 0;
+	 cursor: pointer;
+}
+ .radio-tile-group .input-container .radio-tile {
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 justify-content: center;
+	 width: 100%;
+	 height: 100%;
+	 border: 2px solid #079ad9;
+	 border-radius: 5px;
+	 padding: 1rem;
+	 transition: transform 300ms ease;
+}
+ .radio-tile-group .input-container .icon svg {
+	 fill: #079ad9;
+	 width: 3rem;
+	 height: 3rem;
+}
+ .radio-tile-group .input-container .radio-tile-label {
+	 text-align: center;
+	 font-size: 0.75rem;
+	 font-weight: 600;
+	 text-transform: uppercase;
+	 letter-spacing: 1px;
+	 color: #079ad9;
+}
+ .radio-tile-group .input-container .radio-button:checked + .radio-tile {
+	 background-color: #079ad9;
+	 border: 2px solid #079ad9;
+	 color: white;
+	 transform: scale(1.1, 1.1);
+}
+ .radio-tile-group .input-container .radio-button:checked + .radio-tile .icon svg {
+	 fill: white;
+	 background-color: #079ad9;
+}
+ .radio-tile-group .input-container .radio-button:checked + .radio-tile .radio-tile-label {
+	 color: white;
+	 background-color: #079ad9;
+}
+ 
+	</style>
+
+</head>
+
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{% static 'images/img-01.png' %}" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title">
+						My Playlist - 음원서비스 연동
+					</span>
+
+					<div class="container">
+						<div class="radio-tile-group">
+							<div class="input-container">
+								<input id="melon" class="radio-button" type="radio" name="provider" required/>
+								<div class="radio-tile">
+									<div class="icon walk-icon">
+										<img src="{% static 'images/melon.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="walk" class="radio-tile-label">멜론</label>
+								</div>
+							</div>
+
+							<div class="input-container">
+								<input id="genie" class="radio-button" type="radio" name="provider" />
+								<div class="radio-tile">
+									<div class="icon bike-icon">
+										<img src="{% static 'images/genie.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="bike" class="radio-tile-label">지니</label>
+								</div>
+							</div>
+
+							<div class="input-container">
+								<input id="flo" class="radio-button" type="radio" name="provider" />
+								<div class="radio-tile">
+									<div class="icon car-icon">
+										<img src="{% static 'images/flo.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="drive" class="radio-tile-label">Flo</label>
+								</div>
+							</div>
+
+							<div class="input-container">
+								<input id="vibe" class="radio-button" type="radio" name="provider" />
+								<div class="radio-tile">
+									<div class="icon fly-icon">
+										<img src="{% static 'images/vibe.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="fly" class="radio-tile-label">Vibe</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="아이디를 입력해주세요.">
+						<input class="input100" type="text" name="username" placeholder="아아디">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="패스워드를 입력해주세요.">
+						<input class="input100" type="password" name="password" placeholder="패스워드">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							로그인
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<a class="txt2" href="javascript:alert('안타깝네요.');">
+							아이디 / 패스워드
+						</a>
+						<span class="txt1">
+							잊으셨나요?
+						</span>
+
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-nav-container">
+		<div class="tab purple" onclick="location.href='/'">
+			<i class="fas fa-home"></i>
+			<p>Home</p>
+		</div>
+		<div class="tab pink" onclick="location.href='/popular'">
+			<i class="far fa-heart"></i>
+			<p>Likes</p>
+		</div>
+		<div class="tab yellow" onclick="location.href='/feeds'">
+			<i class="fas fa-music"></i>
+			<p>Feeds</p>
+		</div>
+		<div class="tab yellow" onclick="location.href='/search'">
+			<i class="fas fa-search"></i>
+			<p>Search</p>
+		</div>
+		<div class="tab active teal" onclick="location.href='/myprofile'">
+			<i class="far fa-user"></i>
+			<p>Profile</p>
+		</div>
+	</div>
+
+
+	<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

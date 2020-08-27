@@ -8,8 +8,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True) #자기소개
     picture = models.ImageField(blank = True, upload_to = 'playlistProfile/', null=True, default=None) #프로필사진
-    music = models.ForeignKey(Song, on_delete=models.SET_NULL, null=True, default=None) #프로필뮤직
-    primaryMusicAccount = models.ForeignKey('MusicServiceAccount', on_delete=models.SET_NULL, default=None, null=True) #담기할때 연결되는 음원서비스계정
+    music = models.ForeignKey(Song, on_delete=models.SET_NULL, null=True, default=None, blank=True) #프로필뮤직
+    primaryMusicAccount = models.ForeignKey('MusicServiceAccount', on_delete=models.SET_NULL, default=None, null=True, blank=True) #담기할때 연결되는 음원서비스계정
     follow = models.ManyToManyField(User, related_name='follow', blank=True) #팔로잉하는 유저들
 
     def __str__(self):

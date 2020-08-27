@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Playlists</title>
+    <link rel="stylesheet" href="{% static 'css/tabbar.css' %}">
+    <script src="{% static 'js/tabbar.js' %}"></script>
+</head>
+
+<body>
+    
+    <!-- <h2>Weekly Coding Challenge #3 - Navigation</h2> -->
+    <div class="main">
+        <h1>hello</h1>
+    </div>
+    <div class="tab-nav-container">
+        <div class="tab active purple" onclick="location.href='/'">
+            <i class="fas fa-home"></i>
+            <p>Home</p>
+        </div>
+        <div class="tab pink" onclick="location.href='/popular'">
+            <i class="far fa-heart"></i>
+            <p>Likes</p>
+        </div>
+        <div class="tab yellow" onclick="location.href='/feeds'">
+            <i class="fas fa-music"></i>
+            <p>Feeds</p>
+        </div>
+        <div class="tab yellow" onclick="location.href='/search'">
+            <i class="fas fa-search"></i>
+            <p>Search</p>
+        </div>
+        <div class="tab teal" onclick="location.href='/myprofile'">
+            <i class="far fa-user"></i>
+            <p>Profile</p>
+        </div>
+    </div>
+<!-- 
+    <footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+            - Read how I created this and how you can join the challenge
+            <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/tab-bar-navigation/">here</a>
+        </p>
+    </footer> -->
+</body>
+
+</html>

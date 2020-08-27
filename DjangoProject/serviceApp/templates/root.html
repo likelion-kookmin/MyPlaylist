@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, 
+                     minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+    <title>Insert title here</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 800px) {
+            .service {
+                width: 100% !important;
+            }
+            .player {
+                display: none;
+            }
+
+        }
+    </style>
+    <script type="text/javascript">
+        window.document.domain = "127.0.0.1";
+    </script>
+</head>
+
+<body>
+    <!-- <div>
+        <div class="left">
+            <iframe src="/home" frameborder="0"></iframe>
+        </div>
+        <div class="right">
+            <iframe src="https://www.genie.co.kr/player/fPlayer" frameborder="0"></iframe>
+        </div>
+    </div> -->
+    <!-- <iframe src="https://www.genie.co.kr/player/fPlayer"></iframe> -->
+
+    <iframe class='service' src="https://127.0.0.1/home" frameborder="0" scrolling="yes" style="height: 100%; 
+                width: 49%; float: left; " height="100%" width="49%" align="left">
+    </iframe>
+
+    <iframe class='player' src="https://www.genie.co.kr/member/popLogin?page_rfr=https%3A//www.genie.co.kr/player/fPlayer" frameborder="0" scrolling="yes" style="overflow: hidden; height: 100%;
+
+        width: 49%; " height="100%" width="49%" align="right">
+    </iframe>
+
+
+</body>
+
+</html>
