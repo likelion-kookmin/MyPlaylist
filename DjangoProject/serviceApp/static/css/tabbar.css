@@ -92,7 +92,7 @@
         @media (max-width: 450px) {
             .tab-nav-container {
                 padding: 20px;
-                width: 350px;
+                /* width: 350px; */
             }
 
             .tab {

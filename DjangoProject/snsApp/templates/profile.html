@@ -38,6 +38,8 @@
                     <button class="btn profile-edit-btn">프로필 편집</button>
                     <button class="btn profile-settings-btn" aria-label="profile settings" onclick="location.href='/integrate'"><i class="fas fa-cog"></i></button>
                     <button class="btn profile-edit-btn"  onclick="location.href='/logout'">로그아웃</button>
+                    {% elif request.user.is_authenticated %}
+                    <button class="btn profile-edit-btn">팔로우</button>
                     {% endif %}
 
                 </div>

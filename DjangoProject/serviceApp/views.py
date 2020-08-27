@@ -3,6 +3,8 @@ import snsApp.views
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+from snsApp.models import *
+
 # Create your views here.
 # def root(request, query):
 #     if query == 'home':
@@ -62,4 +64,19 @@ def logout(request):
 
 
 def add_integrate(request):
-    return render(request, 'integrate.html')
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            msa = MusicServiceAccount(user=request.user.profile, music_provider=1, username=request.POST['username'], password=request.POST['password'])
+            print(request.POST['provider'])
+            msa.music_provider = msa.get_provider_from_val(request.POST['provider'])
+            print( msa.get_provider_from_val(request.POST['provider']))
+            msa.save()
+
+
+            user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
+            auth.login(request, user)
+            return redirect('/integrate')
+        else:
+            return render(request, 'addintegrate.html')
+    else:
+        return redirect('/login')

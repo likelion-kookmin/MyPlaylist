@@ -120,11 +120,68 @@
 						My Playlist - 음원서비스 연동
 					</span>
 
-					
+					<div class="container">
+						<div class="radio-tile-group">
+							<div class="input-container">
+								<input id="MELON" value="MELON" class="radio-button" type="radio" name="provider" required/>
+								<div class="radio-tile">
+									<div class="icon walk-icon">
+										<img src="{% static 'images/melon.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="walk" class="radio-tile-label">멜론</label>
+								</div>
+							</div>
+
+							<div class="input-container">
+								<input id="GENIE" value="GENIE"class="radio-button" type="radio" name="provider" />
+								<div class="radio-tile">
+									<div class="icon bike-icon">
+										<img src="{% static 'images/genie.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="bike" class="radio-tile-label">지니</label>
+								</div>
+							</div>
+
+							<div class="input-container">
+								<input id="FLO" value="FLO" class="radio-button" type="radio" name="provider" />
+								<div class="radio-tile">
+									<div class="icon car-icon">
+										<img src="{% static 'images/flo.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="drive" class="radio-tile-label">Flo</label>
+								</div>
+							</div>
+
+							<div class="input-container">
+								<input id="VIBE" value="VIBE" class="radio-button" type="radio" name="provider" />
+								<div class="radio-tile">
+									<div class="icon fly-icon">
+										<img src="{% static 'images/vibe.png' %}" alt="" height="50" width="50">
+									</div>
+									<label for="fly" class="radio-tile-label">Vibe</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="아이디를 입력해주세요.">
+						<input class="input100" type="text" name="username" placeholder="아아디">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="패스워드를 입력해주세요.">
+						<input class="input100" type="password" name="password" placeholder="패스워드">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							계정 추가
+							로그인
 						</button>
 					</div>
 

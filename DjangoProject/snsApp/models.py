@@ -66,4 +66,18 @@ class MusicServiceAccount(models.Model):
     def __str__(self):
         return f"{self.get_music_provider_display()} {self.username}"
 
+    def get_provider_from_val(self, value):
+        if value == "MELON":
+            return 1
+        elif value == "GENIE":
+            return 2
+        elif value == "FLO":
+            return 3
+        elif value == "VIBE":
+            return 4
+        elif value == "BUGS":
+            return 5
+        else:
+            return -1
+
 
