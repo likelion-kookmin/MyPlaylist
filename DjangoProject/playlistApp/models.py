@@ -35,13 +35,13 @@ class Song(models.Model):
     artist = models.CharField(max_length = 200) #곡의 아티스트
     title = models.CharField(max_length= 200) #곡의 제목
     album = models.CharField(max_length= 200) #곡의 앨범명
-    time = models.DurationField() #곡의 재생시간
-    albumArt = models.ImageField(upload_to= 'albumArt/') #곡의 앨범아트
-    melonUid = models.IntegerField() #멜론에서의 곡 id
-    genieUid = models.IntegerField() #지니에서의 곡 id
-    bugsUid = models.IntegerField() #벅스에서의 곡 id
-    floUid = models.CharField(max_length = 200) #flo에서의 곡 id - flo에서만 id가 string으로 저장됨.
-    viveUid = models.IntegerField() #vive에서의 곡 id
+    time = models.DurationField(blank=True, null=True, default=None) #곡의 재생시간
+    albumArt = models.ImageField(upload_to= 'albumArt/',blank=True, null=True, default=None) #곡의 앨범아트
+    melonUid = models.IntegerField(null=True, default=None) #멜론에서의 곡 id
+    genieUid = models.IntegerField(null=True, default=None) #지니에서의 곡 id
+    bugsUid = models.IntegerField(null=True, default=None) #벅스에서의 곡 id
+    floUid = models.CharField(max_length = 200, null=True, default=None) #flo에서의 곡 id - flo에서만 id가 string으로 저장됨.
+    viveUid = models.IntegerField(null=True, default=None) #vive에서의 곡 id
 
     #곡 정보 반환
     def __str__(self):

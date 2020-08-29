@@ -30,7 +30,9 @@ urlpatterns = [
     path('login', serviceApp.views.login, name='login'),
     path('logout', serviceApp.views.logout, name='logout'),
     path('register', serviceApp.views.register, name='register'),
-    path('integrate/add', serviceApp.views.add_integrate, name='integrate'),
+    # path('integrate', serviceApp.views.integrate, name='integrate'),
+    path('test', serviceApp.views.crawl),
+    path('integrate/add', serviceApp.views.add_integrate, name='addintegrate'),
     
     path('<str:username>', snsApp.views.profile, name='user-profile'),
     path('myprofile/myprofile', serviceApp.views.home, name='sssmyprofile'),

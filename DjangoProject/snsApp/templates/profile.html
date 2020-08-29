@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -36,7 +36,15 @@
                     {% if request.user == profile_user.user %}
                     
                     <button class="btn profile-edit-btn">프로필 편집</button>
-                    <button class="btn profile-settings-btn" aria-label="profile settings" onclick="location.href='/integrate'"><i class="fas fa-cog"></i></button>
+
+                    {% if profile_user.primaryMusicAccount %}
+												
+                    <button class="btn profile-edit-btn"  onclick="location.href='/integrate/add'"><img src="{% static 'images/melon.png' %}" alt="" width="20" height="20" style="float:left;">{{profile_user.primaryMusicAccount.username}}</button>
+                    {% else %}
+                    <button class="btn profile-edit-btn"  onclick="location.href='/integrate/add'">계정연결</button>
+                    {% endif %}
+                    
+                    <!-- <button class="btn profile-settings-btn" aria-label="profile settings" onclick="location.href='/integrate'"><i class="fas fa-cog"></i></button> -->
                     <button class="btn profile-edit-btn"  onclick="location.href='/logout'">로그아웃</button>
                     {% elif request.user.is_authenticated %}
                     <button class="btn profile-edit-btn">팔로우</button>
